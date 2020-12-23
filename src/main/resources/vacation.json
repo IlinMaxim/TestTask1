@@ -1,0 +1,14 @@
+{
+    "data": {
+        "saveInformation": "Данные успешно сохранены",
+        "deleteInformation": "Данные успешно удалены",
+        "firstVacation": {
+            "startDate": "15-01-2021",
+            "endDate": "16-01-2021"
+        },
+        "secondVacation": {
+            "startDate": "25-01-2021",
+            "endDate": "31-01-2021"
+        }
+    }
+}
