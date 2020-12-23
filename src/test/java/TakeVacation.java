@@ -103,7 +103,7 @@ public class TakeVacation extends Base {
         $("#schedule-date_start").clear();
         $("#schedule-date_end").clear();
 
-        $("#schedule-date_end").waitUntil(Condition.appear, 7000);
+        $(".ajax-result").shouldBe(Condition.visible);
         $("#schedule-date_start").setValue(startDate);
         $("#schedule-date_end").setValue(endDate);
 
