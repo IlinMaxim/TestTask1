@@ -42,7 +42,7 @@ public class TakeVacation extends Base {
 
         firstVacation = mapper.readValue(String.valueOf(childNode.get("firstVacation")), new TypeReference<Map<String, Object>>() {
         });
-        secondVacation = mapper.readValue(String.valueOf(childNode.get("firstVacation")), new TypeReference<Map<String, Object>>() {
+        secondVacation = mapper.readValue(String.valueOf(childNode.get("secondVacation")), new TypeReference<Map<String, Object>>() {
         });
 
 
@@ -51,7 +51,7 @@ public class TakeVacation extends Base {
         addVacation(firstVacation,softAssert);
         addVacation(secondVacation, softAssert);
 
-        editVacation(firstVacation, "10-12-2021", "21-12-2021", softAssert);
+        editVacation(firstVacation, "10-12-2021", "11-12-2021", softAssert);
 
         deleteVacation(secondVacation, softAssert);
 
@@ -103,7 +103,7 @@ public class TakeVacation extends Base {
         $("#schedule-date_start").clear();
         $("#schedule-date_end").clear();
 
-        $("#schedule-date_start").shouldBe(Condition.visible);
+        $("#schedule-date_end").waitUntil(Condition.appear, 7000);
         $("#schedule-date_start").setValue(startDate);
         $("#schedule-date_end").setValue(endDate);
 
