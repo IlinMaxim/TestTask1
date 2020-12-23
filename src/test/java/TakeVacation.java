@@ -16,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -100,12 +101,14 @@ public class TakeVacation extends Base {
 
     @Step("Ввод данных")
     void postVacation(String startDate, String endDate, SoftAssertions softAssert) {
-        $("#schedule-date_start").clear();
-        $("#schedule-date_end").clear();
+        SelenideElement startDateField = $("#schedule-date_start").shouldBe(enabled);
+        SelenideElement endDateField = $("#schedule-date_end").shouldBe(enabled);
 
-        $(".ajax-result").shouldBe(Condition.visible);
-        $("#schedule-date_start").setValue(startDate);
-        $("#schedule-date_end").setValue(endDate);
+        startDateField.clear();
+        endDateField.clear();
+
+        startDateField.setValue(startDate);
+        endDateField.setValue(endDate);
 
         clickButton("Сохранить");
 
