@@ -103,6 +103,7 @@ public class TakeVacation extends Base {
         $("#schedule-date_start").clear();
         $("#schedule-date_end").clear();
 
+        $("#schedule-date_start").shouldBe(Condition.visible);
         $("#schedule-date_start").setValue(startDate);
         $("#schedule-date_end").setValue(endDate);
 
